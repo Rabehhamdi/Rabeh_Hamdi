@@ -1,0 +1,252 @@
+<html>
+
+<head>
+  <title>Restaurant Rabeh</title>
+  <style>
+    #div_resume {
+      background-color:#d4d4d4;
+      border: 2px solid;
+      padding: 5px;
+    }
+  </style>
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/datePicker.js"></script>
+  <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/datePicker.css" type="text/css">
+  <link rel="stylesheet" href="css/chekbox.css">
+
+  <style>
+    body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
+
+.form-heading { color:#fff; font-size:23px;}
+.panel h2{ color:#444444; font-size:18px; margin:0 0 8px 0;}
+.panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
+.login-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  max-width: 38%;
+  padding: 50px 70px 70px 71px;
+}
+
+.login-form .form-group {
+  margin-bottom:10px;
+}
+.login-form{ text-align:center;}
+.forgot a {
+  color: #777777;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.login-form  .btn.btn-primary {
+  background: #f0ad4e none repeat scroll 0 0;
+  border-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+}
+.forgot {
+  text-align: left; margin-bottom:30px;
+}
+.botto-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin: auto;
+}
+.login-form .btn.btn-primary.reset {
+  background: #ff9900 none repeat scroll 0 0;
+}
+.back { text-align: left; margin-top:10px;}
+.back a {color: #444444; font-size: 13px;text-decoration: none;}
+
+
+
+</style>
+</head>
+
+<body id="LoginForm">
+  <div class="container">
+    <h1 class="form-heading">Commandez votre table</h1>
+    <div class="login-form">
+      <div class="main-div">
+        <div class="panel">
+          <h2>Commandez votre table</h2>
+          <p>Ce formulaire permet de commander une table dans notre restaurant, ensuite vous pouvez commande vos plats.
+            Il faudra aussi indiquer vos coordonn&eacute;es et dans le cas de plusieurs personne, indiquer le nom de
+            chacun d'entre eux.</p>
+        </div>
+        <form id="Login">
+          <form id="form1" name="form1" method="post" action="">
+             
+               
+
+            
+            <div class="panel">
+                <h2>Table pour combien de personnes ?</h2>
+              
+            <select name="nbp" id="nbp">
+              <option value="-1">--Veuillez choisir---</option>
+              <option value="1">Une place</option>
+              <option value="2">Deux places</option>
+              <option value="4">4 places</option>
+              <option value="6">6 places</option>
+            </select>
+          </div>
+             
+            <div id="chaises">
+            </div>
+
+            <div class="panel">
+                <h2>A quelle date vous allez venir ?</h2>
+                <input name="date" type="text" id="date" value="" />
+            </div>
+            
+            
+            <br />
+            
+            <hr />
+
+            <div class="panel"> 
+            <h1 style="color:darkgreen" >Vos coordon&eacute;es</h1>
+           <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Civilit&eacute; :
+            <input name="civilite" type="radio" value="mme" />
+            Madamme
+            <input name="civilite" type="radio" value="mlle" />
+            Mademoiselle
+            <input name="civilite" type="radio" value="m" />
+            Monsieur</h2> 
+            <br />
+          </div>
+<br>
+<div class="panel">
+             <h2>Nom et pr&eacute;nom :  
+            <input name="nom" type="text" id="nom" size="30" /></h2>
+          </div>
+
+            
+
+            <br />
+<div class="panel">
+
+            <h2>N&deg; de t&eacute;l&eacute;phone :
+            <input name="tel" type="text" id="tel" />
+            <br />
+            <div id="div_accompagnateurs">Liste des accompagnateurs (une personne par ligne):
+              <br />
+              <textarea name="accompagnateurs" cols="60" rows="4" id="accompagnateurs"></textarea>
+              <br />
+            </div></h2>
+            </div> 
+            <hr />
+            <div class="panel">
+
+              <h1 style="color: darkgreen">Que voulez-vous manger ? </h1>
+              <h2>
+ 
+                <div class="form-group">
+                    <label></label>
+                     
+                    <div class="checkbox-animated" style="margin-left:40%;">
+                        <input id="checkbox_animated_1" type="checkbox" name="cmd" value="Salade" data-prix="5" >
+                        <label for="checkbox_animated_1" style="margin-right:60%;">
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            Salade
+                        </label>
+                    </div>
+
+                    <div class="checkbox-animated" style="margin-left:40%;">
+                        <input id="checkbox_animated_2" type="checkbox" name="cmd" value="Soupe" data-prix="2.5" >
+                        <label for="checkbox_animated_2" style="margin-right:60%;">
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            Soupe
+                        </label>
+                    </div>
+
+                    <div class="checkbox-animated" style="margin-left:40%;">
+                        <input id="checkbox_animated_3" type="checkbox" name="cmd" value="Couscous" data-prix="15.5" >
+                        <label for="checkbox_animated_3" style="margin-right:60%;">
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            Couscous
+                        </label>
+                    </div>
+
+                    <div class="checkbox-animated" style="margin-left:40%;">
+                        <input id="checkbox_animated_4" type="checkbox" name="cmd" value="Riz" data-prix="12" >
+                        <label for="checkbox_animated_4" style="margin-right:60%;">
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            Riz
+                        </label>
+                    </div>
+                     
+
+                    <div class="checkbox-animated" style="margin-left:40%;">
+                        <input id="checkbox_animated_5" type="checkbox" name="cmd" value="Fruits" data-prix="7" >
+                        <label for="checkbox_animated_5" style="margin-right:60%;">
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            Fruits
+                        </label>
+                    </div>
+
+                    <div class="checkbox-animated" style="margin-left:40%;" >
+                        <input id="checkbox_animated_6" type="checkbox" name="cmd" value="Gateaux" data-prix="6.4"  >
+                        <label for="checkbox_animated_6" style="margin-right:60%;" >
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            Gateaux
+                        </label>
+                    </div>
+
+
+                </div>
+ 
+                
+ 
+              <hr />
+            </h2>    
+              <br />
+              <input name="b1" type="button" class="btn btn-primary" id="b1" value="Valider ma commande" />
+              <br />
+              <br />
+              </div>
+
+
+            <div id="div_resume">
+              Afficher le r&eacute;sum&eacute; ici ...
+            </div>
+            <p>&nbsp;</p>
+          </form>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+  </div>
+   
+
+  
+</body>
+<!-- Les code Javascript CI-DESSOUS uniquement -->
+<script>
+
+</script>
+</html>
